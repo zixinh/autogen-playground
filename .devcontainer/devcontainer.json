@@ -1,0 +1,19 @@
+{
+    "name": "autogen playground",
+    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2":{
+            "enableNonRootDocker": "true"
+        }
+    },
+    "postCreateCommand": "bash ./.devcontainer/init.sh",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.vscode-docker",
+                "ms-python.python",
+                "GitHub.copilot"
+            ]
+        }
+    }
+}

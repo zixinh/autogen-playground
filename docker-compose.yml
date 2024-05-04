@@ -1,0 +1,17 @@
+version: '3.9'
+networks:
+  playground-network:
+    name: playground-network
+    driver: bridge
+
+services:
+  team-research:
+    build: ./team-research
+    ports:
+      - "8080:8080"
+    networks:
+      - playground-network
+    env_file:
+      - ./team-research/.env
+    volumes:
+      - ./team-research:/app
